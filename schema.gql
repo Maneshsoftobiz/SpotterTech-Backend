@@ -1,0 +1,17 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Query {
+  user(id: Float!): Users!
+  users: [Users!]!
+}
+
+type Users {
+  id: Int!
+  firstname: String!
+  lastname: String!
+  email: String!
+  password: String!
+  role_id: Int!
+}
