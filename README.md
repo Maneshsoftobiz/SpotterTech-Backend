@@ -27,8 +27,8 @@ GraphQL is an open-source data query and manipulation language for APIs, and a r
     |                            
     ├───db                                           # For database dependencies .     
     │   ├───migrations                               # For all migrations we created directory migrations .
-    │   ├───models                                   # For all entities we created directory models.
-    │   │     └───users                                  # For users models entity.                                   
+    │   ├───entities                                   # For all entities we created directory entities.
+    │   │     └───users                                  # For users entities entity.                                   
     │   └───seeders                                  # For all seeders we created directory seeders.              
     │                           
     ├───modules                                   # Application modules goes here.                              
@@ -178,10 +178,10 @@ export class UsersResolver {
 ```javascript
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Users } from '@app/db/models';
+import { Users } from '@app/db/entities';
 import { Repository } from 'typeorm';
 import { CreateUserInput } from "./users.input";
-import { UserRoles } from '@app/db/models/userRole/user.role.entity';
+import { UserRoles } from '@app/db/entities/userRole/user.role.entity';
 import { CoreModule } from '../core/core.module';
 
 /**
@@ -226,8 +226,8 @@ export class UsersService {
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersResolver } from './users.resolver';
 import { UsersService } from './users.service';
-import { Users } from '@app/db/models';
-import { UserRoles } from '@app/db/models/userRole/user.role.entity';
+import { Users } from '@app/db/entities';
+import { UserRoles } from '@app/db/entities/userRole/user.role.entity';
 import { CoreModule } from '../core/core.module';
 
 /**
