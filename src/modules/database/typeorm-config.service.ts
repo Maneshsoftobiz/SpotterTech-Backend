@@ -15,7 +15,7 @@ import * as path from 'path';
 export class TypeOrmConfigService implements TypeOrmOptionsFactory {
   constructor(private databaseConfigService: ConfigService) { }
   createTypeOrmOptions(): TypeOrmModuleOptions {
-    const entityPath = path.resolve('dist/db/models/index{.ts,.js}');
+    const entityPath = path.resolve('dist/db/entities/index{.ts,.js}');
     return {
       type: 'postgres',
       host: this.databaseConfigService.get('database.host'),

@@ -11,7 +11,7 @@ import * as path from 'path';
  */
 const currentEnv = process.env.NODE_ENV || 'local';
 const envConfig: any = dotenv.parse(fs.readFileSync(path.resolve(process.cwd(), 'env', `.env.${currentEnv}`)));
-const entityPath = path.resolve('db/models/**/*.entity{.ts,.js}');
+const entityPath = path.resolve('db/entities/**/*.entity{.ts,.js}');
 const config: ConnectionOptions = {
   type: 'postgres',
   host: envConfig.DATABASE_HOST,
