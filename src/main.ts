@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 
 import { initApplication } from './loader';
 import { Logger } from '@nestjs/common';
-import { AppModule } from './modules/app/app.module';
+import { AppModule } from './modules/app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
@@ -12,8 +12,9 @@ async function bootstrap() {
   });
   const configService = app.get(ConfigService);
   const port = configService.get('server.port');
-  const baseUrl = process.env.APP_URL;
+  const baseUrl = configService.get('server.baseUrl');
   await initApplication(app);
+
   await app.listen(port, () => {
     Logger.log(`App is running at ${baseUrl}:${port}/graphql`);
   });

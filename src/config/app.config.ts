@@ -19,4 +19,5 @@ export default registerAs('server', () => ({
   apiDocHeading: process.env.API_DOC_HEADING || 'Doc Heading',
   apiDocDesc: process.env.API_DOC_DESC || 'Doc description',
   apiDocTags: 'Spottertech',
+  baseUrl: process.env.APP_URL || 'http://localhost'
 }));

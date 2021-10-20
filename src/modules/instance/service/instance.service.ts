@@ -32,12 +32,12 @@ export class InstanceService {
     //
   }
 
-  // update instance
+  // update instance by id
   public async updateInstance() {
     //
   }
 
-  //   delete instance by id
+  // delete instance by id
   public async deleteInstance() {
     //
   }

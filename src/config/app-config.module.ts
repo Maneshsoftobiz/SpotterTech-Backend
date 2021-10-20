@@ -1,7 +1,7 @@
 import { Module, Global } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { AppConfigService } from './services/app-config/app-config.service';
-import { DatabaseConfigService } from './services/database-config/database-config.service';
+// import { AppConfigService } from './services/app-config/app-config.service';
+// import { DatabaseConfigService } from './services/database-config/database-config.service';
 import * as path from 'path';
 import server from "@config/app.config";
 import database from "@config/database.config";
@@ -27,6 +27,9 @@ const currentEnv = process.env.NODE_ENV || 'local';
       expandVariables: true,
     }),
   ],
-  providers: [AppConfigService, DatabaseConfigService],
+  providers: [
+    // AppConfigService,
+    //  DatabaseConfigService
+    ],
 })
 export class AppConfigModule { }
