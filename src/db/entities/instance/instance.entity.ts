@@ -15,21 +15,21 @@ export class InstanceEntity {
 
   @Expose()
   @Column()
-  user_id: string;
+  user_id: number;
 
   @Expose()
-  @Column()
+  @Column('varchar', { length: 255 })
   instance_name: string;
 
   @Expose()
-  @CreateDateColumn()
+  @CreateDateColumn({ type: 'timestamptz' })
   createdAt: Date;
 
   @Expose()
-  @UpdateDateColumn()
+  @UpdateDateColumn({ type: 'timestamptz' })
   updatedAt: Date;
 
   @Column()
-  @DeleteDateColumn()
+  @DeleteDateColumn({ type: 'timestamptz' })
   deletedAt: Date;
 }
